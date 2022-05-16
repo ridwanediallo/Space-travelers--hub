@@ -7,9 +7,9 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 const NavBar = () => {
   const activeLink = ({ isActive }) => {
     return {
-      color: isActive ? '#95bcf0' : '',
-      paddingBottom: isActive ? '0.25rem' : '',
-      borderBottom: isActive ? '3px solid #95bcf0' : '',
+      color: isActive ? '#0d6efd' : '',
+      paddingBottom: isActive ? '0.30rem' : '',
+      borderBottom: isActive ? '3px solid #0d6efd' : '',
     };
   };
 
