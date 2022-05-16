@@ -1,8 +1,25 @@
 .logo {
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .link {
-   text-decoration: none;
+  text-decoration: none;
+}
+
+/* .link:hover {
+    color: #95bcf0;
+    padding-bottom: 0.25rem;
+    border-bottom: 3px solid #95bcf0;
+} */
+
+.link:active {
+  color: #95bcf0;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid #95bcf0;
+}
+
+.navbar-toggler-icon {
+  background-color: black;
+  filter: invert(100%);
 }

@@ -17,13 +17,13 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#rockets">
-            <NavLink to="/" className="text-primary link">Rockets</NavLink>
+            <NavLink to="/" className="text-primary link" activeStyle="active">Rockets</NavLink>
             </Nav.Link>
             <Nav.Link href="#missions">
-            <NavLink to="/missions" className="text-primary link">Missions</NavLink>
+            <NavLink to="/missions" className="text-primary link" activeStyle="active">Missions</NavLink>
             </Nav.Link>
             <Nav.Link href="#profile">
-             <NavLink to="/profile" className="text-primary link">My Profile</NavLink>
+             <NavLink to="/profile" className="text-primary link" activeStyle="active">My Profile</NavLink>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
