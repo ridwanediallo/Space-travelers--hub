@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './NavBar.css'
 import Logo from './planet.png';
 import {Navbar, Container, Nav} from 'react-bootstrap';
@@ -15,9 +16,15 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav"  className="text-dark"/>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#rockets"className="text-primary">Rockets</Nav.Link>
-            <Nav.Link href="#missions"className="text-primary">Missions</Nav.Link>
-            <Nav.Link href="#profile"className="text-primary">My Profile</Nav.Link>
+            <Nav.Link href="#rockets">
+            <NavLink to="/" className="text-primary link">Rockets</NavLink>
+            </Nav.Link>
+            <Nav.Link href="#missions">
+            <NavLink to="/missions" className="text-primary link">Missions</NavLink>
+            </Nav.Link>
+            <Nav.Link href="#profile">
+             <NavLink to="/profile" className="text-primary link">My Profile</NavLink>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
