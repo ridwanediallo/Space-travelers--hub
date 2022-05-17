@@ -27,12 +27,7 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#rockets">
-              <NavLink
-                style={activeLink}
-                to="/"
-                className="text-primary link"
-                activeStyle="active"
-              >
+              <NavLink style={activeLink} to="/" className="text-primary link">
                 Rockets
               </NavLink>
             </Nav.Link>
@@ -41,7 +36,6 @@ const NavBar = () => {
                 style={activeLink}
                 to="/missions"
                 className="text-primary link"
-                activeStyle="active"
               >
                 Missions
               </NavLink>
@@ -51,7 +45,6 @@ const NavBar = () => {
                 style={activeLink}
                 to="/profile"
                 className="text-primary link"
-                activeStyle="active"
               >
                 My Profile
               </NavLink>
