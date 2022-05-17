@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getPosts = createAsyncThunk('posts/getPosts', async () => {
-    return fetch('https://api.spacexdata.com/v3/rockets').then((res) => res.json());
+    return fetch('https://api.spacexdata.com/v3/rockets').then((response) => response.json());
 })
 
 const postSlice = createSlice({
