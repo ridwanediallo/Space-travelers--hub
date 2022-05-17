@@ -1,0 +1,10 @@
+.rockets-image {
+  width: 400px;
+  height: 300px;
+}
+
+.rocket-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
