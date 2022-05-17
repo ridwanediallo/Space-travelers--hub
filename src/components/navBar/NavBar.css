@@ -17,3 +17,8 @@
   background-color: black;
   filter: invert(100%);
 }
+
+.mission-btn {
+  /* border-left: 3px solid #95bcf0; */
+  background-color: none;
+}
