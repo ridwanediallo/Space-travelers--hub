@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import missionSlice from "./mission/missionSlice";
 import postSlice from "./rockets/postSlice";
 
-export const store = configureStore({
+export default configureStore({
     reducer: {
-        post: postSlice
+        post: postSlice,
+        mission: missionSlice
     }
 })

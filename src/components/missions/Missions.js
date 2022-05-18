@@ -1,7 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Table } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { getMissionsData } from '../../redux/mission/missionSlice';
+
 
 const Missions = () => {
+  const dispatch = useDispatch();
+  const missions = useSelector(state => state.mission);
+  console.log(missions)
+
+  useEffect(() => {
+   dispatch(getMissionsData())
+  }, [dispatch, getMissionsData]);
+
+
   return (
     <Table
       striped
