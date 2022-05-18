@@ -9,7 +9,7 @@ const Rockets = () => {
   const {posts, loading} = useSelector(state => state.post)
   useEffect(() => {
       dispatch(getPosts());
-  }, [dispatch])
+  }, [dispatch, getPosts])
 
   if(loading) {
     return <h2>Loading...</h2>
