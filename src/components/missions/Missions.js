@@ -1,18 +1,16 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMissionsData } from '../../redux/mission/missionSlice';
 
-
 const Missions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector(state => state.mission);
-  console.log(missions)
+  const {missions} = useSelector((state) => state.mission);
+  console.log(missions);
 
   useEffect(() => {
-   dispatch(getMissionsData())
+    dispatch(getMissionsData());
   }, [dispatch, getMissionsData]);
-
 
   return (
     <Table
@@ -31,23 +29,26 @@ const Missions = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>
-            <div className="btns">
-              <tr>
-                <button type="button" className="btn btn-secondary ms-3">
-                  NOT A MEMBER
-                </button>
-                <button type="button" className="btn btn-outline-dark ms-3">
-                  Join Mission
-                </button>
-              </tr>
-            </div>
-          </td>
-        </tr>
-        <tr>
+        {missions.map((mission) => (
+          <tr key={mission.mission_id}>
+            <td>{mission.mission_name}</td>
+            <td>{mission.description}</td>
+            <td>
+              <div className="btns">
+                <tr className="d-flex">
+                  <button type="button" className="btn btn-secondary ms-3">
+                    NOT A MEMBER
+                  </button>
+                  <button type="button" className="btn btn-outline-dark ms-3">
+                    Join Mission
+                  </button>
+                </tr>
+              </div>
+            </td>
+          </tr>
+        ))}
+
+        {/* <tr>
           <td>Jacob</td>
           <td>Thornton</td>
           <div className="btns">
@@ -60,7 +61,7 @@ const Missions = () => {
               </button>
             </tr>
           </div>
-        </tr>
+        </tr> */}
       </tbody>
     </Table>
   );
