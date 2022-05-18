@@ -1,16 +1,15 @@
 import React, {useEffect} from 'react'
 import { Col, Row,Button, Container } from 'react-bootstrap';
-import rocket1 from './rocket1.png';
 import './rockets.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getPosts } from './redux/features/postSlice';
+import { getPosts } from '../../redux/rockets/postSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const {posts, loading} = useSelector(state => state.post)
   useEffect(() => {
-      dispatch(getPosts())
-  }, [dispatch, getPosts])
+      dispatch(getPosts());
+  }, [dispatch])
 
   if(loading) {
     return <h2>Loading...</h2>
