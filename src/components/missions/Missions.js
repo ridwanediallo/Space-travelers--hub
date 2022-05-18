@@ -6,8 +6,7 @@ import { getMissionsData } from '../../redux/mission/missionSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector(state => state.mission);
-  console.log(missions)
+  const {missions} = useSelector(state => state.mission);
 
   useEffect(() => {
    dispatch(getMissionsData())
@@ -31,37 +30,26 @@ const Missions = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>
-            <div className="btns">
-              <tr>
-                <button type="button" className="btn btn-secondary ms-3">
-                  NOT A MEMBER
-                </button>
-                <button type="button" className="btn btn-outline-dark ms-3">
-                  Join Mission
-                </button>
-              </tr>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <div className="btns">
-            <tr>
-              <button type="button" className="btn btn-info ms-3">
-                NOT A MEMBER
-              </button>
-              <button type="button" className="btn btn-outline-danger ms-3">
-                Join Mission
-              </button>
-            </tr>
-          </div>
-        </tr>
-      </tbody>
+        {missions.map((mission) => (
+           <tr  key={mission.mission_id}>
+           <td>{mission.mission_name}</td>
+           <td>{mission.description}</td>
+           <td>
+               <tr className='w-25'  >
+               <div className="btns d-flex">
+                 <button type="button" className="btn btn-secondary ms-3">
+                   NOT A MEMBER
+                 </button>
+                 <button type="button" className="btn btn-outline-dark ms-3">
+                   Join Mission
+                 </button>
+                 </div>
+               </tr>
+      
+           </td>
+         </tr>
+        ))}
+        </tbody>
     </Table>
   );
 };

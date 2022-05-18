@@ -23,7 +23,7 @@ const missionSlice = createSlice({
     },
     [getMissionsData.fulfilled]: (state, action) => {
       console.log('success');
-      state.missions.push(action.payload);
+      state.missions = action.payload;
     },
   },
 });
