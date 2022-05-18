@@ -1,25 +1,34 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Col, Row,Button, Container } from 'react-bootstrap';
 import rocket1 from './rocket1.png';
 import './rockets.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPosts } from './redux/features/postSlice';
 
 const Rockets = () => {
-  const id = Date.now();
+  const dispatch = useDispatch();
+  const {posts, loading} = useSelector(state => state.post)
+  useEffect(() => {
+      dispatch(getPosts())
+  }, [dispatch, getPosts])
+
+  if(loading) {
+    return <h2>Loading...</h2>
+  }
   return (
     <Container>
-   <div className='rocket-container'>
-   <div>
-      <img src={rocket1} className="rockets-image" alt="rocket image" />
-    </div>
-    <div>
-      <h2>Falcon 1</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Fusce ut placerat orci nulla pellentesque. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Mi bibendum neque egestas congue. 
-        Viverra maecenas accumsan lacus vel facilisis volutpat est. Malesuada nunc vel risus commodo. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas.
-         At erat pellentesque adipiscing commodo elit. Imperdiet sed euismod nisi porta. Enim facilisis gravida neque convallis a cras semper auctor.</p>
-         <Button variant="primary">Primary</Button>{' '}
-    </div>
-   </div>
+      {posts.map((item) => (
+         <div key={item.id} className='rocket-container'>
+         <div>
+            <img src={item.flickr_images[0]} className="rockets-image" alt="rocket image" />
+          </div>
+          <div className='grid-row'>
+            <h2>{item.rocket_name}</h2>
+            <p>{item.description}</p>
+               <Button className='button' variant="primary">Primary</Button>{' '}
+          </div>
+         </div>
+      ))}
   </Container>
   )
 }
