@@ -47,21 +47,6 @@ const Missions = () => {
             </td>
           </tr>
         ))}
-
-        {/* <tr>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <div className="btns">
-            <tr>
-              <button type="button" className="btn btn-info ms-3">
-                NOT A MEMBER
-              </button>
-              <button type="button" className="btn btn-outline-danger ms-3">
-                Join Mission
-              </button>
-            </tr>
-          </div>
-        </tr> */}
       </tbody>
     </Table>
   );
