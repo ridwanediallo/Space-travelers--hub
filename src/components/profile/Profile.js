@@ -21,12 +21,18 @@ const Profile = () => {
         <h2 className="ms-5">My Rockets</h2>
         <div className="card rocket-cart ms-5">
           <ul className="list-group list-group-flush">  
-          {reservedRockets.map((rocketName) => { 
+          {/* {reservedRockets >= 1  ? reservedRockets.map((rocketName) => { 
             const {rocket_name, id} = rocketName;
              return (
               <li key={id} className="list-group-item">{rocket_name}</li>
              )
-            })} 
+          }) : <p>No</p>}  */}
+            {!reservedRockets ? <p>No</p> : reservedRockets.map((rocketName) => { 
+            const {rocket_name, id} = rocketName;
+             return (
+              <li key={id} className="list-group-item">{rocket_name}</li>
+             )
+          })} 
           </ul>
         </div>
       </div>
