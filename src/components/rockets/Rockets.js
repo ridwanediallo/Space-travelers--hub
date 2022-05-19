@@ -38,7 +38,7 @@ const Rockets = () => {
            <div className='grid-row'>
              <h2>{item.rocket_name}</h2>
              <p><span className='reserve-span'>reserved</span>{item.description}</p>
-                <Button id={item.id} onClick={handleRocketsReservation} className='button' variant="primary">Cancel Reservation</Button>{' '}
+                <Button id={item.id} onClick={handleRocketsReservation} className='button' variant="info">Cancel Reservation</Button>{' '}
            </div>
           </div>
          )
