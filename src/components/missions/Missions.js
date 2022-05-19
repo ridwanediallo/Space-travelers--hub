@@ -6,8 +6,7 @@ import { getMissionsData } from '../../redux/mission/missionSlice';
 const Missions = () => {
   const dispatch = useDispatch();
   const {missions} = useSelector((state) => state.mission);
-  console.log(missions);
-
+ console.log(missions)
   useEffect(() => {
     dispatch(getMissionsData());
   }, [dispatch, getMissionsData]);
@@ -30,13 +29,13 @@ const Missions = () => {
       </thead>
       <tbody>
         {missions.map((mission) => (
-          <tr key={mission.mission_id}>
-            <td>{mission.mission_name}</td>
+          <tr key={mission.id}>
+            <td>{mission.name}</td>
             <td>{mission.description}</td>
             <td>
               <div className="btns">
                 <tr className="d-flex">
-                  <button type="button" className="btn btn-secondary ms-3">
+                  <button type="button" className="btn btn-secondary">
                     NOT A MEMBER
                   </button>
                   <button type="button" className="btn btn-outline-dark ms-3">
