@@ -23,8 +23,8 @@ const Rockets = () => {
           </div>
           <div className='grid-row'>
             <h2>{item.rocket_name}</h2>
-            <p>{item.description}</p>
-               <Button className='button' variant="primary">Primary</Button>{' '}
+            <p><span className='reserve-span'>reserved</span>{item.description}</p>
+               <Button className='button' variant="primary">Reserve Rockets</Button>{' '}
           </div>
          </div>
       ))}
