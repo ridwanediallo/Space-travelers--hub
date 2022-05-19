@@ -9,7 +9,7 @@ const Rockets = () => {
   const allRockets = useSelector((state) => state.post);
   
   useEffect(() => {
-      if(!allRockets) dispatch(getPosts());
+      if(!allRockets.length) dispatch(getPosts());
   }, [dispatch, getPosts])
 
   const handleRocketsReservation = ({target}) => {
