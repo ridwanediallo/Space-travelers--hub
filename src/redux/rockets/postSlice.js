@@ -5,9 +5,9 @@ export const getPosts = createAsyncThunk('posts/getPosts', async () => {
    const rocketsData = await response.json();
    const fetchedRockets = rocketsData.map((rocket) => ({
        id: rocket.id,
-       rocketName: rocket.rocket_name,
+       rocket_name: rocket.rocket_name,
        description: rocket.description,
-       rocketImage: rocket.flickr_image[0],
+       rocket_image: rocket.flickr_images[0],
        canceled: false,
    }));
    return fetchedRockets;
@@ -15,10 +15,7 @@ export const getPosts = createAsyncThunk('posts/getPosts', async () => {
 
 const postSlice = createSlice({
     name: 'posts',
-    initialState: {
-        posts: [],
-        loading: false,
-    },
+    initialState: [],
     reducers: {
         updateRockets: (state, action) => state.map((rocket) => {
             if(rocket.id === action.payload) {
@@ -29,13 +26,7 @@ const postSlice = createSlice({
     },
 
     extraReducers: {
-        [getPosts.pending]: (state, action) => {
-            state.loading = true;
-        },
-        [getPosts.fulfilled]: (state, action) => {
-            state.loading = false;
-            state.posts = action.payload;
-        },
+        [getPosts.fulfilled]: (state, action) => action.payload
       
     },
 });
