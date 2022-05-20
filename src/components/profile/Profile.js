@@ -10,7 +10,6 @@ const Profile = () => {
   const reservedRockets = reserveRockets.filter(
     (rocket) => rocket.canceled === true
   );
-  console.log(filteredMissions);
   return (
     <div className="container d-flex justify-content-center my-5">
       <div>
@@ -19,8 +18,6 @@ const Profile = () => {
           <ul className="list-group list-group-flush">
             {filteredMissions.map((mission) => {
               const { id, name } = mission;
-              console.log(id);
-              console.log(name);
               return (
                 <li key={id} className="list-group-item">
                   {name}
