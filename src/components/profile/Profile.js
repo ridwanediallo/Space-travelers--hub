@@ -27,10 +27,13 @@ const Profile = () => {
       <div>
         <h2 className="ms-5">My Rockets</h2>
         <div className="card rocket-cart ms-5">
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
+          <ul className="list-group list-group-flush">  
+            {reservedRockets.length ? reservedRockets.map((rocketName) => { 
+            const {rocket_name, id} = rocketName;
+             return (
+              <li key={id} className="list-group-item">{rocket_name}</li>
+             )
+          }) : <p className='p-2 text-danger'>Please reserve a rocket</p>} 
           </ul>
         </div>
       </div>

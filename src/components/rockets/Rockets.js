@@ -2,31 +2,46 @@ import React, {useEffect} from 'react'
 import { Col, Row,Button, Container } from 'react-bootstrap';
 import './rockets.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getPosts } from '../../redux/rockets/postSlice';
+import { getPosts, updateRockets } from '../../redux/rockets/postSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const {posts, loading} = useSelector(state => state.post)
+  const allRockets = useSelector((state) => state.post);
+  
   useEffect(() => {
-      dispatch(getPosts());
+      if(!allRockets.length) dispatch(getPosts());
   }, [dispatch, getPosts])
 
-  if(loading) {
-    return <h2>Loading...</h2>
+  const handleRocketsReservation = ({target}) => {
+    const {id} = target;
+    dispatch(updateRockets(Number(id)));
   }
   return (
     <Container>
-      {posts.map((item) => (
-         <div key={item.id} className='rocket-container'>
-         <div>
-            <img src={item.flickr_images[0]} className="rockets-image" alt="rocket image" />
+      {allRockets.map((item) => (
+         !item.canceled ? (
+          <div key={item.id} className='rocket-container'>
+          <div>
+             <img src={item.rocket_image} className="rockets-image" alt="rocket image" />
+           </div>
+           <div className='grid-row'>
+             <h2>{item.rocket_name}</h2>
+             <p>{item.description}</p>
+                <Button id={item.id} onClick={handleRocketsReservation} className='button' variant="primary">Reserve Rockets</Button>{' '}
+           </div>
           </div>
-          <div className='grid-row'>
-            <h2>{item.rocket_name}</h2>
-            <p><span className='reserve-span'>reserved</span>{item.description}</p>
-               <Button className='button' variant="primary">Reserve Rockets</Button>{' '}
+         ) : (
+          <div key={item.id} className='rocket-container'>
+          <div>
+             <img src={item.rocket_image} className="rockets-image" alt="rocket image" />
+           </div>
+           <div className='grid-row'>
+             <h2>{item.rocket_name}</h2>
+             <p><span className='reserve-span'>reserved</span>{item.description}</p>
+                <Button id={item.id} onClick={handleRocketsReservation} className='button' variant="info">Cancel Reservation</Button>{' '}
+           </div>
           </div>
-         </div>
+         )
       ))}
   </Container>
   )
