@@ -38,29 +38,42 @@ const Missions = () => {
             <td>{mission.name}</td>
             <td>{mission.description}</td>
             <td>
-             {!mission.canceled ? (
+              {!mission.canceled ? (
                 <div className="btns">
-                <tr className="d-flex">
-                  <button type="button" className="btn btn-secondary">
-                    NOT A MEMBER
-                  </button>
-                  <button id={mission.id} onClick={handleMisionReservation}  type="button" className="btn btn-outline-dark ms-3">
-                    Join Mission
-                  </button>
-                </tr>
-              </div>
-             ) : (
-              <div className="btns">
-              <tr className="d-flex">
-                <button type="button" className="btn btn-info">
-                  Active Member
-                </button>
-                <button id={mission.id} onClick={handleMisionReservation}  type="button" className="btn btn-outline-danger ms-3">
-                  Join Mission
-                </button>
-              </tr>
-            </div>
-             )}
+                  <tr className="d-flex">
+                    <button
+                      type="button"
+                      className="btn btn-secondary text-white"
+                    >
+                      NOT A MEMBER
+                    </button>
+                    <button
+                      id={mission.id}
+                      onClick={handleMisionReservation}
+                      type="button"
+                      className="btn btn-outline-dark ms-3"
+                    >
+                      Join Mission
+                    </button>
+                  </tr>
+                </div>
+              ) : (
+                <div className="btns">
+                  <tr className="d-flex">
+                    <button type="button" className="btn btn-info text-white">
+                      Active Member
+                    </button>
+                    <button
+                      id={mission.id}
+                      onClick={handleMisionReservation}
+                      type="button"
+                      className="btn btn-outline-danger ms-3"
+                    >
+                      Join Mission
+                    </button>
+                  </tr>
+                </div>
+              )}
             </td>
           </tr>
         ))}
