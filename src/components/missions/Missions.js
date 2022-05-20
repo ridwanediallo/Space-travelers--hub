@@ -7,14 +7,12 @@ const Missions = () => {
   const dispatch = useDispatch();
   // const {missions} = useSelector((state) => state.mission);
   const missions = useSelector((state) => state.mission);
- console.log(missions)
   useEffect(() => {
-    dispatch(getMissionsData());
-  }, [dispatch, getMissionsData]);
+    if(!missions.length)   dispatch(getMissionsData());
+  }, [dispatch]);
 
   const handleMisionReservation = ({target}) => {
     const {id} = target;
-    console.log(id);
     dispatch(JoinMission(id))
   }
 
