@@ -1,15 +1,22 @@
 import React, { useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { getMissionsData } from '../../redux/mission/missionSlice';
+import { getMissionsData, JoinMission } from '../../redux/mission/missionSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const {missions} = useSelector((state) => state.mission);
+  // const {missions} = useSelector((state) => state.mission);
+  const missions = useSelector((state) => state.mission);
  console.log(missions)
   useEffect(() => {
     dispatch(getMissionsData());
   }, [dispatch, getMissionsData]);
+
+  const handleMisionReservation = ({target}) => {
+    const {id} = target;
+    console.log(id);
+    dispatch(JoinMission(id))
+  }
 
   return (
     <Table
@@ -33,16 +40,29 @@ const Missions = () => {
             <td>{mission.name}</td>
             <td>{mission.description}</td>
             <td>
-              <div className="btns">
+             {!mission.canceled ? (
+                <div className="btns">
                 <tr className="d-flex">
                   <button type="button" className="btn btn-secondary">
                     NOT A MEMBER
                   </button>
-                  <button type="button" className="btn btn-outline-dark ms-3">
+                  <button id={mission.id} onClick={handleMisionReservation}  type="button" className="btn btn-outline-dark ms-3">
                     Join Mission
                   </button>
                 </tr>
               </div>
+             ) : (
+              <div className="btns">
+              <tr className="d-flex">
+                <button type="button" className="btn btn-info">
+                  Active Member
+                </button>
+                <button id={mission.id} onClick={handleMisionReservation}  type="button" className="btn btn-outline-danger ms-3">
+                  Join Mission
+                </button>
+              </tr>
+            </div>
+             )}
             </td>
           </tr>
         ))}
