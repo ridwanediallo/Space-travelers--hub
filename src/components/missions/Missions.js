@@ -5,7 +5,6 @@ import { getMissionsData, JoinMission } from '../../redux/mission/missionSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  // const {missions} = useSelector((state) => state.mission);
   const missions = useSelector((state) => state.mission);
   useEffect(() => {
     if(!missions.length)   dispatch(getMissionsData());
@@ -20,7 +19,6 @@ const Missions = () => {
     <Table
       striped
       bordered
-      // hover
       size="lg"
       className="container my-5"
       responsive="lg"
