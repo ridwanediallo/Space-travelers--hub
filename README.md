@@ -20,7 +20,7 @@ To get a local copy up and running follow these simple exampl
 
 #### Live demo
 
-[Space Travelers Hub](https://rid-bookstore-cms.netlify.app/)
+[Space Travelers Hub](http://ridwanediallo.github.io/Space-travelers--hub)
 
 ### **Option 2**
 
