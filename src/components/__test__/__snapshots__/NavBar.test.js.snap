@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly NavBar component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="border-bottom navbar navbar-expand-lg navbar-dark bg-white"
+      >
+        <div
+          class="container"
+        >
+          <a
+            class="d-flex navbar-brand"
+            href="#home"
+          >
+            <div
+              class="logo d-flex align-items-center py-2"
+            >
+              <img
+                alt="logo"
+                class="logo-img"
+                src="planet.png"
+              />
+              <h2
+                class="ps-3 text-dark"
+              >
+                Space Travelers Hub
+              </h2>
+            </div>
+          </a>
+          <button
+            aria-controls="responsive-navbar-nav"
+            aria-label="Toggle navigation"
+            class="text-dark navbar-toggler collapsed"
+            type="button"
+          >
+            <span
+              class="navbar-toggler-icon"
+            />
+          </button>
+          <div
+            class="navbar-collapse collapse"
+            id="responsive-navbar-nav"
+          >
+            <div
+              class="ms-auto navbar-nav"
+            >
+              <a
+                class="nav-link"
+                data-rr-ui-event-key="#rockets"
+                href="#rockets"
+              >
+                <a
+                  aria-current="page"
+                  class="text-primary link active"
+                  href="/"
+                  style="color: rgb(13, 110, 253); padding-bottom: 0.30rem; border-bottom: 3px solid #0d6efd;"
+                >
+                  Rockets
+                </a>
+              </a>
+              <a
+                class="nav-link"
+                data-rr-ui-event-key="#missions"
+                href="#missions"
+              >
+                <a
+                  class="text-primary link"
+                  href="/missions"
+                >
+                  Missions
+                </a>
+              </a>
+              <a
+                class="nav-link"
+                data-rr-ui-event-key="#profile"
+                href="#profile"
+              >
+                <a
+                  class="text-primary link"
+                  href="/profile"
+                >
+                  My Profile
+                </a>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="border-bottom navbar navbar-expand-lg navbar-dark bg-white"
+    >
+      <div
+        class="container"
+      >
+        <a
+          class="d-flex navbar-brand"
+          href="#home"
+        >
+          <div
+            class="logo d-flex align-items-center py-2"
+          >
+            <img
+              alt="logo"
+              class="logo-img"
+              src="planet.png"
+            />
+            <h2
+              class="ps-3 text-dark"
+            >
+              Space Travelers Hub
+            </h2>
+          </div>
+        </a>
+        <button
+          aria-controls="responsive-navbar-nav"
+          aria-label="Toggle navigation"
+          class="text-dark navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="navbar-collapse collapse"
+          id="responsive-navbar-nav"
+        >
+          <div
+            class="ms-auto navbar-nav"
+          >
+            <a
+              class="nav-link"
+              data-rr-ui-event-key="#rockets"
+              href="#rockets"
+            >
+              <a
+                aria-current="page"
+                class="text-primary link active"
+                href="/"
+                style="color: rgb(13, 110, 253); padding-bottom: 0.30rem; border-bottom: 3px solid #0d6efd;"
+              >
+                Rockets
+              </a>
+            </a>
+            <a
+              class="nav-link"
+              data-rr-ui-event-key="#missions"
+              href="#missions"
+            >
+              <a
+                class="text-primary link"
+                href="/missions"
+              >
+                Missions
+              </a>
+            </a>
+            <a
+              class="nav-link"
+              data-rr-ui-event-key="#profile"
+              href="#profile"
+            >
+              <a
+                class="text-primary link"
+                href="/profile"
+              >
+                My Profile
+              </a>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
