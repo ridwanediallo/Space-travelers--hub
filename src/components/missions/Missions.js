@@ -67,7 +67,7 @@ const Missions = () => {
                       type="button"
                       className="btn btn-outline-danger ms-3"
                     >
-                      Join Mission
+                      Leave Mission
                     </button>
                   </tr>
                 </div>
